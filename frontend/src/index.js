@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './App.css';
+import Navbar from './components/Navbar';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Contact from './Contact';
+
+function Root() {
+  const [page, setPage] = useState('main');
+
+  return (
+    <div className="app-bg">
+      <Navbar onMenuClick={setPage} active={page} />
+      <div className="content-container">
+        {page === 'main' ? <App /> : <Contact />}
+      </div>
+      <div
+        className="copyright"
+        style={{ textAlign: 'center', fontSize: '12px', color: 'navy' }}
+      >
+        <p>© 2025 Dae-Seong Yang. All rights reserved.</p>
+      </div>
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

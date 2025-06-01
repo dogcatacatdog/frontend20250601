@@ -1,0 +1,25 @@
+.contact-content {
+  text-align: center;
+  padding: 40px 0;
+  position: relative;
+  min-height: 300px;
+}
+
+.contact-content h2 {
+  color: #1565c0;
+  margin-bottom: 16px;
+}
+
+.cat-image-fixed {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 200px;
+  height: 250px;
+  z-index: 100;
+  object-fit: contain;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-radius: 16px;
+  background: #fff;
+  padding: 8px;
+}
